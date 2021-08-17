@@ -161,12 +161,14 @@ void move_towards_destination(int angle_of_destination,int next_point,int time_f
       while(i<time_for_forward) {
         if(obstacle()) {
           stop_Robot();
+          buzzer_sound();
           break; 
         }
         if(!(present_robot_angle()<=(angle_of_destination+2) && present_robot_angle()>=(angle_of_destination-2))) {
           while (!(present_robot_angle()<=(angle_of_destination+2) && present_robot_angle()>=(angle_of_destination-2))) {
           if(obstacle()) {
             stop_Robot();
+            buzzer_sound();
             break;
           }
             if(present_robot_angle()<angle_of_destination-2) {
